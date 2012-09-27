@@ -117,7 +117,8 @@ endif
 syn match coffeeObjAssign /@\?\I\i*\s*\ze::\@!/ contains=@coffeeIdentifier display
 hi def link coffeeObjAssign Identifier
 
-syn match coffeeFunction /\w\+\(\s*=.*\->\)\@=/ contains=@coffeeIdentifier display
+syn match coffeeFunction /@\?\I.*\w\+\ze\s*=\s*.*\->/ contains=@coffeeIdentifier display
+"syn match coffeeFunction /.*\w\+\ze\s*=\s*\((.*\->|\->\)/ contains=@coffeeIdentifier display
 hi def link coffeeFunction Function
 
 syn keyword coffeeTodo TODO FIXME XXX contained
